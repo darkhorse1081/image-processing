@@ -1,0 +1,15 @@
+function [smoothed_points] = SmoothSignalPass(input_array)
+
+% grabs first three vals of input array =>
+% three_pointsmooth(input([1][2][3])
+
+storage = input_array;
+
+% changed = input_array[i+1]...[len[input_array]-1]
+for i = 2:length(input_array)-1
+    input_array(i) = ThreePointSmooth([]);
+end
+
+
+
+% ThreePointSmooth([input_array[i]])
