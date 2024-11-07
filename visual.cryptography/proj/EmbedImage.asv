@@ -11,7 +11,7 @@ for i = 1:row
         green = colour(i,j,2);
         blue = colour(i,j,3);
 
-        total = double(red) + double(green) + double(blue);
+        total = red + green + blue;
         
         % compares values based on black and white and manipulates data
         % processes data based on odd calculation
@@ -34,7 +34,7 @@ for i = 1:row
                     colour(i,j,1) = colour(i,j,1) + 1;
                 end
             else
-                 colour(i,j,1) = colour(i,j,1);
+                
             end
         end
     end
