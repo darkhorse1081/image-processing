@@ -1,4 +1,7 @@
 function[output_key] = GenerateKey(integer_values, pattern_create)
+    % This function generates an output cell array based on integer values
+    % and a set of patterns. Each integer in the input array is used to select
+    % a pattern from the pattern_create cell array.
 
     [row,col] = size(integer_values);
 

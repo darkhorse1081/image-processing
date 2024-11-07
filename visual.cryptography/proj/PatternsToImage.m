@@ -1,20 +1,23 @@
 function[grey_scale] = PatternsToImage(cell_pattern)
 
-% obtain
 [row,col] = size(cell_pattern);
 
+% Scale the number of rows and columns by 2 (doubling the size of the final image)
 scaled_row = 2*row;
 scaled_col = 2*col;
 
+% Initialize the greyscale image with zeros (black) of the scaled size
 grey_scale = uint8(zeros(scaled_row,scaled_col));
 
+% Loop through each element in the cell pattern (each small pattern)
 for i = 1:row
     for j = 1:col
         interior_array = cell_pattern{i,j};
 
         for k = 1:size(interior_array,1)
             for l = 1:size(interior_array,2)
-                if i == 1 && j == 1
+
+                if i == 1 && j == 1  % If it's the first pattern (top-left), directly copy the pattern to the final image
                     grey_scale(k,l) = interior_array(k,l);
                 else
                     row_index = 2*i - (mod(k,2) == 1);
