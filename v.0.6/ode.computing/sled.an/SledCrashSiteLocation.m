@@ -1,18 +1,4 @@
 function [x] = SledCrashSiteLocation(elevationfunction, h)
-% SledCrashSiteLocation determines the distance from the cliff the
-% rocket-propelled sled has landed into the ocean derived from the flight
-% elevation function.
-%
-% NOTE: Even though some functions may not "look" representative of a
-% flight elevation path (i.e. starting in the negatives down) we still are
-% looking for the smallest positive root.
-% 
-% Input: elevationfunction: mathematical function f(x) describing the
-%           flight elevation
-%        h: cliff height.
-% Output: x: crash site distance from cliff
-%
-% Author: MZ 2021
 
 % Initial crash site search guess
 x0 = 0;
@@ -30,7 +16,6 @@ while ~isFound
         % exit condition, first positive non-zero crash location.
         isFound = true;
     end
-    % Increment crash site search location.
     x0 = x0 + 1;    
 end
 
