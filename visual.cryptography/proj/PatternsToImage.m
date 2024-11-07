@@ -1,4 +1,7 @@
 function[grey_scale] = PatternsToImage(cell_pattern)
+% The function takes as input a 2x2 cell array of uint8-encoded patterns, each representing discrete segments of an image. 
+% It processes these patterns and synthesizes them into a unified grayscale image, represented as a 2D uint8 array, thereby 
+% rendering it in a format compatible for visualization and subsequent storage.
 
 [row,col] = size(cell_pattern);
 
@@ -16,12 +19,17 @@ for i = 1:row
 
         for k = 1:size(interior_array,1)
             for l = 1:size(interior_array,2)
-
-                if i == 1 && j == 1  % If it's the first pattern (top-left), directly copy the pattern to the final image
+                % If it's the first pattern (top-left), directly embed to greyscale output
+                if i == 1 && j == 1  
                     grey_scale(k,l) = interior_array(k,l);
                 else
+                    % For other patterns, determine where in the larger image to place the interior pattern
+                    % Calculate the row index for the larger image based on whether the row (k) is odd or even
                     row_index = 2*i - (mod(k,2) == 1);
+                     % Calculate the column index for the larger image based on whether the column (l) is odd or even
                     col_index = 2*j - (mod(l,2) == 1);
+
+                    % Place the value from the interior pattern into the larger image at the calculated position
                     grey_scale(row_index, col_index) = interior_array(k,l);
                 end
             end
