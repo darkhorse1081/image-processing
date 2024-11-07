@@ -1,5 +1,4 @@
 function results = FindPhoneNumber(searchstring, contacts)
-% Author: MZ 2021
 
 load(contacts, 'names', 'phonenumbers');
 
