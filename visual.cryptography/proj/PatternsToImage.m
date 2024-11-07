@@ -1,6 +1,6 @@
 function[grey_scale] = PatternsToImage(cell_pattern)
 
-
+% obtain
 [row,col] = size(cell_pattern);
 
 scaled_row = 2*row;
