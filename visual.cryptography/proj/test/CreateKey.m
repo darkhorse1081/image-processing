@@ -8,6 +8,7 @@
 % For this script to work you will need to write the following functions:
 % CreatePatterns, GenerateKey, PatternsToImage, EmbedImage
 %
+% Author: Peter Bier
 
 r = input('Enter the number of rows in your message image:');
 c = input('Enter the number of columns in your message image:');

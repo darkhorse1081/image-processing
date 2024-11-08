@@ -1,7 +1,6 @@
-% 2021 Visual Cryptography project specification example calls
+% Visual Cryptography project specification example calls
 % You may find it useful to use these calls for testing
 
-% Author: Peter Bier
 
 clear; % a good idea to use clear before testing any function
 

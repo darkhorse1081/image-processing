@@ -5,8 +5,6 @@
 %
 % For this script to work you will need to write the following functions:
 % ExtractImage, DecryptImage
-%
-% Author: Peter Bier
 
 hiddenCipherFilename = input('Enter the filename for your hidden cipher image (or hit enter to use hiddenCipher.png):','s');
 % Use the default name if one wasn't entered

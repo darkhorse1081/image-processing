@@ -7,8 +7,6 @@
 % 
 % For this script to work you will need to write the following functions:
 % ImageToPatterns, EncryptImage, PatternsToImage, EmbedImage
-%
-% Author: Peter Bier
 
 plainImageFilename = input('Enter the filename of a binary image to encrypt:','s');
 
