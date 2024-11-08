@@ -122,22 +122,31 @@ hidden = EmbedImage(binary,colour)
 
 %% ImageToPatterns
 
-im = uint8([0 0 0 255; 255 255 255 0])
+% im = uint8([0 0 0 255; 255 255 255 0])
+im = uint8([ 0 255; 0 255; 255 255; 0 0 ])
 % im will have values
 %      0     0     0   255
 %    255   255   255     0
 p = ImageToPatterns(im)
 % p will be a  1×2 cell array containing 2×2 uint8 matrices
 
-p1 = p{1} % note curly braces
+p1 = p{1,1} % note curly braces
 % p1 will be a 2×2 uint8 matrix with values
 %     0     0
 %   255   255
 
-p2 = p{2} % note curly braces
+
+%     0   255
+%     0   255
+
+p2 = p{2,1} % note curly braces
 % p2 will be 2×2 uint8 matrix with values
 %     0   255
-%   255     0
+%   255    0
+
+
+%    255  255
+%     0    0
 
 image = uint8([     0   255     0   255   255   255     0   255;
                     0   255   255     0     0     0     0   255;

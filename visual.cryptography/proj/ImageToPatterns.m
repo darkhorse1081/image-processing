@@ -9,25 +9,14 @@ second_count = 0;
 
 for i = 1:2:row
     second_count = second_count + 1;
-    if col>1
-        for j = 1:2:col
-                count = count + 1;
-                storageArray = uint8(zeros(2,2));
-                storageArray = storageArray + greyscaleImage(i:i+1,j:j+1);
-                cellPattern{i-(second_count-1),j-(count-1)} = storageArray;
-                if j == col
-                    count = 0;
-                end
-        end
-    else
-        count = count + 1;
-        storageArray = uint8(zeros(2,2));
-        storageArray = storageArray + greyscaleImage(i:i+1,j:j+1);
-        cellPattern{i-(second_count-1),j-(count-1)} = storageArray;
-        if j == col
-            count = 0;
-        end
-
+    for j = 1:2:col
+            count = count + 1;
+            storageArray = uint8(zeros(2,2));
+            storageArray = storageArray + greyscaleImage(i:i+1,j:j+1);
+            cellPattern{i-(second_count-1),j-(count-1)} = storageArray;
+            if j == col-1
+                count = 0;
+            end
     end
 end
 
