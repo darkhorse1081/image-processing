@@ -12,24 +12,17 @@ second_count = 0;
 for i = 1:2:row
     second_count = second_count + 1;
     for j = 1:2:col
-        if i == 1 % needs rework
-            for m = i:i+1
-                for n = j:j+1
-                    storageArray(i,j) = greyscaleImage(i,j); % logic works
-                end
-            end
-            cellPattern{i,(i+j)/2} = storageArray; % this needs rework
-        else
             count = count + 1;
             for m = i:i+1
                 for n = j:j+1
-                    storageArray(i,j) = greyscaleImage(i,j);
+                    storageArray(m,n) = greyscaleImage(i,j);
                 end
             end
             cellPattern{i-(second_count-1),j-(count-1)} = storageArray;
-        end
+            if j == col
+                count = 0;
+            end
     end
-    count = 0;
 end
 
 
