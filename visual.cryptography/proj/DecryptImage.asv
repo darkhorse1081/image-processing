@@ -1,0 +1,15 @@
+function[greyscaleImage] = DecryptImage(cipherArray,keyArray)
+
+greyscaleImage = uint8(zeros(size(keyArray)));
+
+for i = 1:size(keyArray,1)
+    for j = 1:size(keyArray,2)
+
+        if cipherArray(i,j) == 255 && keyArray(i,j) == 255
+            greyscaleImage(i)
+
+    end
+end
+
+
+end
