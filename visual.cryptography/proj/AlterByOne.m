@@ -3,9 +3,9 @@ function [final] = AlterByOne(value)
     
     if value == 255
         % If the input value is 255, subtract 1 to avoid overflow.
-        uint8(final) = uint8(value - 1);
+        final = uint8(value - 1);
     elseif value < 255
         % If the input value is less than 255, add 1 to increment it.
-        uint8(final) = uint8(value + 1);
+        final = uint8(value + 1);
     end
 end
