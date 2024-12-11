@@ -19,5 +19,4 @@ end
 % final cipher outputted
 cipheredPattern = keyPattern;
 
-
 end
